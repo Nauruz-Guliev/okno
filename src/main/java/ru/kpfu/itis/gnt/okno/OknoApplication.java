@@ -30,7 +30,7 @@ public class OknoApplication {
 	public String newUser() {
 		try {
 			User user = new User();
-			user.setName("New User");
+			user.setName("New User " + Math.random());
 			User newUser = userRepository.save(user);
 			return "created new user with id " + newUser.getId();
 		} catch (Exception  ex) {
