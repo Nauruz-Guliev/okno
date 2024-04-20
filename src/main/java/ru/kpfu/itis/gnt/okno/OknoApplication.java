@@ -28,9 +28,14 @@ public class OknoApplication {
 
 	@GetMapping("/new")
 	public String newUser() {
-		User user = new User();
-		User newUser = userRepository.save(user);
-		return "created new user with id " + newUser.getId();
+		try {
+			User user = new User();
+			user.setName("New User");
+			User newUser = userRepository.save(user);
+			return "created new user with id " + newUser.getId();
+		} catch (Exception  ex) {
+			return ex.getMessage();
+		}
 	}
 
 	@GetMapping("/okno")
