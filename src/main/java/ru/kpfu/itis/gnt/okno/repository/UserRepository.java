@@ -7,5 +7,4 @@ import ru.kpfu.itis.gnt.okno.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByUsername(String username);
 }
